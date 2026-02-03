@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <nav class="navbar">
+  <div class="container">
+    <div class="right">
+      <h1 class="title">Landing page</h1>
+    </div>
+
+    <div class="left">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fa-solid fa-list-ul fa-2xl open" aria-hidden="true"></i>
+        <i class="fa-solid fa-xmark fa-2xl close" aria-hidden="true"></i>
+      </label>
+
+      <ul class="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+        <section id="home">
+        <div class="lefthome">
+            <h3>Digital media agency</h3>
+            <h2>We boost your website traffic</h2>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem natus cumque dolor dolorum dolores, eligendi tenetur molestiae. Sit minus quod expedita odio sed inventore numquam quasi reiciendis accusamus. Temporibus, nihil?</p>
+            <a class="btn" href="mailto:eduardov716@gmail.com?subject=Free%20Quote" target="_blank">
+                    Free Quote
+            </a>
+
+            
+        </div>
+        <img class="righthome" src="./img/image.png">
+
+
+    </section>    
+
+        <section id="services">
+          <h2 class="section-title">Services</h2>
+          <p class="section-lead">Tailored solutions to boost your online business.</p>
+          <div class="cards">
+            <div class="card">
+              <h3>SEO</h3>
+              <p>On-page and off-page optimization to improve your ranking.</p>
+            </div>
+            <div class="card">
+              <h3>Advertising</h3>
+              <p>Social and Google Ads campaigns focused on conversions.</p>
+            </div>
+            <div class="card">
+              <h3>Web Design</h3>
+              <p>Fast, accessible landing pages that convert visitors.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="team">
+          <h2 class="section-title">Team</h2>
+          <p class="section-lead">A small, agile team with experience.</p>
+          <div class="team-grid">
+            <div class="member">
+              <img src="./img/460099.jpg" alt="Eduardo">
+              <h4>Eduardo</h4>
+              <p>Founder &amp; Strategist</p>
+            </div>
+            <div class="member">
+              <img src="./img/ana.jpeg" alt="Ana">
+              <h4>Ana</h4>
+              <p>Designer</p>
+            </div>
+            <div class="member">
+              <img src="./img/project.jpg" alt="Carlos">
+              <h4>Carlos</h4>
+              <p>Developer</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="about">
+          <h2 class="section-title">About Us</h2>
+          <p class="section-lead">We believe in transparent work, data, and design to grow together.</p>
+          <p class="section-text">With years of experience helping small and medium businesses scale their digital presence. We focus on measurable results and clear processes.</p>
+        </section>
+
+        <section id="contact">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-lead">Ready to get started? Write to us.</p>
+          <a class="btn" href="mailto:eduardov716@gmail.com?subject=Contact%20from%20Landing">Send Message</a>
+        </section>
+
+    <script>
+      const check = document.getElementById('check');
+      const openIcon = document.querySelector('.checkbtn .open');
+      const closeIcon = document.querySelector('.checkbtn .close');
+
+      function updateMenuIcons(){
+        if(!openIcon || !closeIcon) return;
+        if(check.checked){
+          openIcon.style.display = 'none';
+          closeIcon.style.display = 'inline-block';
+        } else {
+          openIcon.style.display = 'inline-block';
+          closeIcon.style.display = 'none';
+        }
+      }
+
+      check.addEventListener('change', function(){
+        document.body.classList.toggle('menu-open', this.checked);
+        updateMenuIcons();
+      });
+
+      // Close menu when a nav link is clicked (mobile)
+      document.querySelectorAll('.list a').forEach(link => {
+        link.addEventListener('click', () => {
+          check.checked = false;
+          document.body.classList.remove('menu-open');
+          updateMenuIcons();
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', updateMenuIcons);
+    </script>
+</body>
+</html>
